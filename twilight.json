@@ -29,12 +29,13 @@
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "وضع عمودي للمنتجات في مربع المنتجات الثابتة في الصفحة الرئيسية",
-            "description": "",
+            "description": null,
             "id": "vertical_fixed_products",
             "format": "switch",
             "required": false,
             "value": false,
-            "selected": false
+            "selected": true,
+            "labelHTML": "/* تصميم المنتجات الثابتة بشكل عمودي ومنسق */ #vertical_fixed_products {   display: grid;   grid-template-columns: 1fr;   gap: 20px;   max-width: 350px;   margin: auto;   padding: 15px;   animation: fadeIn 1s ease-in-out; }  /* البطاقات داخل المربع */ #vertical_fixed_products .product-card {   border: 2px solid #006C35; /* أخضر التأسيس */   border-radius: 15px;   overflow: hidden;   background: #FFFFFF;   box-shadow: 0 4px 12px rgba(0,0,0,0.1);   text-align: center;   transition: transform 0.3s ease, box-shadow 0.3s ease; }  #vertical_fixed_products .product-card:hover {   transform: translateY(-8px) scale(1.02);   box-shadow: 0 8px 20px rgba(0,0,0,0.2); }  /* صورة المنتج */ #vertical_fixed_products .product-card img {   width: 100%;   height: auto;   display: block; }  /* النصوص */ #vertical_fixed_products .product-card h3 {   font-size: 18px;   font-weight: bold;   margin: 12px 0 6px;   color: #006C35; }  #vertical_fixed_products .product-card p {   font-size: 14px;   color: #555;   margin-bottom: 10px; }  #vertical_fixed_products .product-card .price {   font-size: 16px;   font-weight: bold;   color: #C9A635; /* ذهبي */   margin-bottom: 12px; }  /* زر إضافة للسلة */ #vertical_fixed_products .product-card button {   background: #006C35;   color: #fff;   padding: 10px 20px;   border: none;   border-radius: 8px;   cursor: pointer;   font-size: 15px;   font-weight: bold;   transition: background 0.3s ease, transform 0.2s ease; }  #vertical_fixed_products .product-card button:hover {   background: #004F27;   transform: scale(1.05); }  /* حركة دخول */ @keyframes fadeIn {   from { opacity: 0; transform: translateY(20px); }   to { opacity: 1; transform: translateY(0); } }"
         },
         {
             "type": "boolean",
@@ -63,13 +64,14 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "labelHTML": "&lt;style&gt;   /* تنسيق القائمة الرئيسية */   #header_is_sticky {     position: sticky;     top: 0;     z-index: 999;     background-color: #006C35; /* أخضر التأسيس */     transition: all 0.3s ease-in-out;     box-shadow: none;   }    /* عند التمرير لأسفل */   #header_is_sticky.scrolled {     background-color: #C9A635; /* يتحول إلى ذهبي */     box-shadow: 0 4px 15px rgba(0,0,0,0.15);     transform: translateY(0);   }    /* الروابط داخل القائمة */   #header_is_sticky a {     color: #fff;     font-weight: bold;     padding: 12px 18px;     display: inline-block;     text-decoration: none;     transition: color 0.3s ease;   }    #header_is_sticky a:hover {     color: #F5E6C8; /* بيج تراثي عند المرور */   } &lt;/style&gt;   50) {       header.classList.add(\"scrolled\");     } else {       header.classList.remove(\"scrolled\");     }   }); "
         },
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "شريط علوي داكن",
-            "description": "",
+            "description": null,
             "id": "topnav_is_dark",
             "format": "switch",
             "required": false,
@@ -80,7 +82,7 @@
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
-            "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية ",
+            "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية",
             "id": "important_links",
             "format": "switch",
             "required": false,
@@ -103,7 +105,7 @@
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "الوضع الداكن",
-            "description": "",
+            "description": null,
             "id": "footer_is_dark",
             "format": "switch",
             "required": false,
@@ -126,7 +128,7 @@
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "تثبيت زر الإضافة والكمية أسفل شاشة الجوال",
-            "description": "",
+            "description": null,
             "id": "sticky_add_to_cart",
             "format": "switch",
             "required": false,
@@ -137,26 +139,32 @@
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "اظهار الوسوم",
-            "description": "",
+            "description": null,
             "id": "show_tags",
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "labelHTML": "&lt;!-- حاوية الوسوم --&gt; <div id=\"show_tags\">   <a href=\"#\" class=\"tag\">#اليوم_التأسيس</a>   <a href=\"#\" class=\"tag\">#المملكة</a>   <a href=\"#\" class=\"tag\">#تراث</a>   <a href=\"#\" class=\"tag\">#تاريخ</a>   <a href=\"#\" class=\"tag\">#ثقافة</a> </div>  &lt;style&gt; /* حاوية الوسوم */ #show_tags {   display: flex;   flex-wrap: wrap;   gap: 12px;   justify-content: center;   margin: 20px 0;   animation: fadeIn 0.8s ease-in-out; }  /* كل وسم */ #show_tags .tag {   background: #F5E6C8; /* بيج تراثي */   color: #006C35;      /* أخضر تأسيس */   border: 1px solid #C9A635; /* ذهبي */   padding: 8px 16px;   border-radius: 30px;   font-size: 14px;   font-weight: bold;   text-decoration: none;   transition: all 0.3s ease;   cursor: pointer; }  /* التفاعل عند المرور */ #show_tags .tag:hover {   background: #006C35;   /* أخضر غامق */   color: #fff;           /* أبيض */   transform: translateY(-4px) scale(1.05);   box-shadow: 0 4px 10px rgba(0,0,0,0.2);   border-color: #004F27; /* أخضر أغمق */ }  /* حركة دخول */ @keyframes fadeIn {   from { opacity: 0; transform: translateY(10px); }   to { opacity: 1; transform: translateY(0); } } &lt;/style&gt;"
         },
         {
             "id": "slider_background_size",
             "type": "items",
             "format": "dropdown-list",
             "label": "طريقة عرض الصور في سليدر صور المنتج",
-            "description": "",
-            "labelHTML": null,
+            "description": null,
+            "labelHTML": "&lt;!-- سلايدر صور المنتج --&gt; <div id=\"slider_background_size\">   <div class=\"slide active\">     <img src=\"https://via.placeholder.com/600x400.png?text=صورة+1\" alt=\"صورة المنتج 1\">   </div>   <div class=\"slide\">     <img src=\"https://via.placeholder.com/600x400.png?text=صورة+2\" alt=\"صورة المنتج 2\">   </div>   <div class=\"slide\">     <img src=\"https://via.placeholder.com/600x400.png?text=صورة+3\" alt=\"صورة المنتج 3\">   </div>    &lt;!-- أزرار التنقل --&gt;   &lt;button class=\"prev\"&gt;‹&lt;/button&gt;   &lt;button class=\"next\"&gt;›&lt;/button&gt; </div>  &lt;style&gt; /* الحاوية الرئيسية */ #slider_background_size {   position: relative;   width: 100%;   max-width: 600px;   margin: auto;   overflow: hidden;   border: 3px solid #006C35; /* إطار أخضر */   border-radius: 12px;   box-shadow: 0 6px 18px rgba(0,0,0,0.15);   background: #F5E6C8; /* بيج تراثي */ }  /* الشرائح */ #slider_background_size .slide {   display: none;   width: 100%;   animation: fade 1s ease-in-out; }  #slider_background_size .slide.active {   display: block; }  #slider_background_size img {   width: 100%;   display: block;   border-radius: 10px; }  /* أزرار التنقل */ #slider_background_size .prev, #slider_background_size .next {   position: absolute;   top: 50%;   transform: translateY(-50%);   background: #006C35;   color: #fff;   border: none;   padding: 10px 16px;   font-size: 24px;   font-weight: bold;   cursor: pointer;   border-radius: 50%;   transition: background 0.3s ease, transform 0.2s ease; }  #slider_background_size .prev:hover, #slider_background_size .next:hover {   background: #004F27;   transform: scale(1.1); }  #slider_background_size .prev {   left: 15px; }  #slider_background_size .next {   right: 15px; }  /* حركة التلاشي */ @keyframes fade {   from {opacity: 0.4}   to {opacity: 1} } &lt;/style&gt;   {     slide.classList.remove(\"active\");     if (i === index) slide.classList.add(\"active\");   }); }  prevBtn.addEventListener(\"click\", () => {   slideIndex = (slideIndex > 0) ? slideIndex - 1 : slides.length - 1;   showSlide(slideIndex); });  nextBtn.addEventListener(\"click\", () => {   slideIndex = (slideIndex &lt; slides.length - 1) ? slideIndex + 1 : 0;   showSlide(slideIndex); });  /* إظهار أول صورة */ showSlide(slideIndex); ",
             "icon": "sicon-list",
             "selected": [
                 {
                     "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
                     "value": "contain",
                     "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                },
+                {
+                    "label": "تغطية الصورة كامل المساحة مع المحافظة على النسبة الصورة (Cover)",
+                    "value": "cover",
+                    "key": "e9c8ea8f-c5c6-438e-9d45-3bce269afde4"
                 }
             ],
             "options": [
